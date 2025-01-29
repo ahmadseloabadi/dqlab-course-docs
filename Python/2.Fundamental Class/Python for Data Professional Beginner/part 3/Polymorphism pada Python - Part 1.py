@@ -19,18 +19,13 @@ class AnalisData(Karyawan):
     def __init__(self, nama, usia, pendapatan):
     # melakukan pemanggilan konstruktur class Karyawan 
         super().__init__(nama, usia, pendapatan)
-# Buat kembali class turunan (sebagai inherit class) dari class karyawan,  
-# yaitu class IlmuwanData
-class IlmuwanData(Karyawan):
-    # mengubah atribut insentif_lembur yang digunakan pada fungsi lembur()
-    insentif_lembur = 500000
-    def __init__(self, nama, usia, pendapatan):
-        super().__init__(nama, usia, pendapatan)
+    # menerapkan polymorphism dengan mendefinisikan kembali fungsi 
+    # lembur() pada class AnalisData 
+    def lembur(self):
+        # pendapatan tambahan pada class AnalisData sebesar
+        # 10 % dari pendapatannya.
+        self.pendapatan_tambahan += int(self.pendapatan*0.1)
 # Buat objek karyawan yang bekerja sebagai AnalisData
 aksara = AnalisData('Aksara', 25, 8500000)
 aksara.lembur()
 print(aksara.total_pendapatan())
-# Buat objek karyawan yang bekerja sebagai IlmuwanData
-senja = IlmuwanData('Senja', 28, 13000000)
-senja.lembur()
-print(senja.total_pendapatan())
