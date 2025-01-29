@@ -34,7 +34,7 @@ senja = IlmuwanData('Senja', 28, 13000000)
 senja.tambahan_proyek(2000000)
 print(senja.total_pendapatan())
 
-# Penjelasan:
+# Teori:
 # Melalui potongan kode di atas, aku telah menerapkan konsep inheritance. Melalui konsep inheritance class AnalisData dan IlmuwanData akan memiliki setiap atribut dan fungsi yang dimiliki oleh class Karyawan (Hal ini dikarenakan seluruh atribut dan fungsi dari class Karyawan bersifat public).
 
 # Pada konsep inheritance, class AnalisData dan class IlmuwanData disebut sebagai child class dari class Karyawan; sehingga class Karyawan dapat disebut sebagai parent class dari class AnalisData dan IlmuwanData.
