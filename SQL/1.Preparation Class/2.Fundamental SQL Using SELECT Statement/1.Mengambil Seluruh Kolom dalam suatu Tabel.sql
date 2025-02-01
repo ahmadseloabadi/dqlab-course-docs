@@ -9,6 +9,5 @@ SELECT * FROM ms_produk
 -- Tanda * (bintang) artinya seluruh kolom perlu diambil dari tabel yang dirujuk. Tanda ini sering juga disebut sebagai wildcard.
 -- FROM [NAMA_TABLE], artinya table yang akan diambil datanya.
 -- Tanda ; (titik koma) adalah tanda yang menyatakan akhir dari perintah SELECT atau SQL lain.
- 
 
 -- Senja mengajak aku untuk langsung mempraktekkan perintah SQL SELECT untuk menampilkan data pada tabel yang bernama ms_produk. 
