@@ -1,0 +1,72 @@
+Clustering
+Clustering merupakan salah satu teknik analisis data untuk memahami data dengan mengelompokkan data-data tersebut ke dalam beberapa grup (cluster). Data-data ini dikelompokkan berdasarkan kesamaannya, sehingga data yang memiliki kesamaan akan membentuk satu cluster. Hal ini menyebabkan data di dalam satu cluster memiliki kemiripan karakteristik yang tinggi, sementara data antar cluster memiliki kemiripan yang minimum (atau bahkan berbeda) dengan cluster yang lain.
+
+Clustering memanfaatkan algoritma Machine Learning (ML) dalam proses pengelompokkan data. Salah satu algoritma ML yang dapat digunakan untuk clustering adalah K-Means clustering.
+
+Catatan: Algoritma machine learning lazimnya dibagi menjadi tiga kategori besar, yaitu Supervised Learning, Unsupervised Learning, dan Reinforcement Learning.
+
+Karakteristik supervised learning adalah datanya memiliki target class sebagai suatu kesimpulan, misalkan algoritma untuk menentukan apakah suatu email adalah spam atau tidak berdasarkan pengirim, subjek, dan isi email. Nah data yang menyatakan spam atau bukan itu disebut target class.
+
+Sedangkan, karakteristik unsupervised learning tidak memiliki target class yang terdapat di dalam data. Contoh: bagaimana kita membagi siswa menjadi tiga kelompok berdasarkan tinggi badan.
+
+Reinforcement Learning adalah tipe Machine Learning yang terdekat dengan cara manusia belajar. Pada tipe ini, Algoritma atau agen yang digunakan akan melakukan interaksi dengan lingkungannya, mendapatkan penilaian positif atau negatif dan belajar dari penilaian tersebut
+
+Apa itu K-Means Clustering?
+K-Means clustering merupakan salah satu “unsupervised machine learning algorithms” yang paling sederhana dan populer. Algoritma ini cukup sederhana sehingga relatif mudah untuk diterapkan dan tentunya mudah untuk dipahami.  Untuk menggunakan algoritma ini, perlu memiliki data-data yang berupa angka dan bisa diurutkan. Data yang tidak bisa diurutkan biasanya adalah data kategori.
+
+Syarat lain untuk menggunakan algoritma K-Means, yaitu kita juga perlu mendefinisikan nilai k di mana nilai ini merupakan jumlah cluster data yang akan dibentuk. Nilai k juga merujuk kepada jumlah centroid yang dibutuhkan di dataset. Centroid adalah titik pusat dari setiap cluster. Pada algoritma K-Means, nilai centroid pada awalnya akan diletakkan secara acak (random), dan nilainya akan terus menerus diubah sehingga pada akhirnya tidak akan berubah lagi. Nilai centroid-nya adalah nilai rata-rata dari suatu cluster.
+
+Proses K-Means Clustering
+Berikut ini merupakan langkah-langkah yang dilakukan dalam proses clustering menggunakan algoritma K-Means:
+
+1. Menentukan jumlah cluster k, ini dilakukan secara manual
+
+2. Inisialisasi nilai centroid secara random sejumlah k
+
+Centroid merupakan nilai pusat (center) dari sebuah cluster. Apabila k=3 diatur, maka akan terbentuk tiga centroid C1, C2, dan C3 secara random.
+
+3. Menetapkan setiap data point ke centroid terdekat
+
+Pada bagian ini, ada proses menghitung jarak setiap data dengan centroid yang tadi sudah dibuat. Perhitungan jarak dilakukan dengan menggunakan Euclidean distance.
+
+4. Menghitung ulang nilai centroid dari cluster yang baru terbentuk.
+
+Proses ini dilakukan dengan menghitung nilai mean dari setiap data points di dalam cluster tersebut. 
+
+5. Mengulang step 3 dan 4 untuk mengoptimasi posisi dari centroid sampai kriteria berhenti terpenuhi.
+
+ Stopping Criteria
+Poin-poin di bawah ini merupakan kriteria berhenti dalam algoritma K-Means clustering:
+
+Nilai centroid sudah tidak berubah.
+Data point tetap berada pada cluster yang sama.
+Jumlah iterasi maksimum telah tercapai.
+
+Kelebihan & Kelemahan dari K-Means
+Kelebihan dari K-Means
+
+Relatif mudah untuk diimplementasikan dan mudah untuk dipahami.
+Waktu yang dibutuhkan untuk pembelajaran relatif lebih cepat.
+Sangat umum digunakan sebagai teknik clustering.
+Kekurangan dari K-Means
+
+Memerlukan inisialisasi nilai k sehingga perlu menggunakan metode lain untuk mendapatkan nilai k yang optimal.
+Apabila nilai acak untuk centroid kurang baik, maka hasil clustering yang didapatkan menjadi tidak optimal.
+Algoritma ini akan kesulitan untuk mencari jarak dari data banyak dimensi.
+
+Tipe-Tipe Masalah yang Dapat Diselesaikan dengan K-Means
+Seperti yang sudah dijelaskan dalam modul ini, algoritma K-Means mengukur jarak dari data ke setiap centroid yang ada. Data akan masuk ke dalam cluster dengan jarak terkecil dibandingkan dengan centroid lainnya. Hal ini membuat algoritma K-Means tergolong ke dalam algoritma berbasis jarak, sehingga membutuhkan data dengan tipe numerik.
+
+Pada kasus di dunia nyata algoritma ini juga sudah banyak diterapkan untuk:
+
+1. Segmentasi Pasar
+
+Algoritma K-Means sering digunakan untuk segmentasi pelanggan dengan tujuan untuk pemberian promosi khusus, iklan, kelayakan penerimaan kredit bank, dan sebagainya.
+
+2. Pengelompokkan dokumen
+
+Algoritma K-Means dapat digunakan untuk mengelompokkan dokumen yang serupa. Contoh: pengelompokkan berita. Seseorang dapat menentukan kategori berita yang tepat berdasarkan berita-berita yang sudah dikelompokkan.
+
+3. Sistem rekomendasi
+
+Algoritma K-Means dapat digunakan untuk sistem rekomendasi. Contoh: rekomendasi lagu. Aplikasi dapat memberikan rekomendasi lagu berdasarkan lagu-lagu yang telah didengarkan pengguna, kemudian merekomendasikan lagu yang paling mirip.
