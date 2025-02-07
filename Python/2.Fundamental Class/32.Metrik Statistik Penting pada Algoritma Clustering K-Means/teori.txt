@@ -1,0 +1,86 @@
+--Langkah-Langkah yang Dilakukan Dalam Algoritma K-Means
+“Sebelum mulai, ada hal-hal yang perlu diketahui dalam K-Means clustering. K-Means clustering merupakan salah satu algoritma clustering yang sederhana dan sering digunakan. Sesuai namanya, algoritma ini membagi data ke dalam k cluster dan setiap data akan menjadi anggota cluster terdekat,” jelas Senja
+
+Senja menunjukan langkah-langkah yang dilakukan dalam algoritma ini, sebagai berikut:
+
+Menentukan jumlah cluster k.
+Inisialisasi nilai centroid secara random. Centroid merupakan nilai pusat (center) dari sebuah cluster. Apabila kita mengatur k=3, maka akan terbentuk centroid C1, C2, dan C3 secara random.
+Menetapkan setiap data point ke centroid terdekat. Pada bagian ini, terdapat proses menghitung jarak setiap data dengan centroid yang tadi sudah dibuat. Perhitungan jarak dilakukan Senja dengan menggunakan Euclidean distance.
+Menghitung ulang nilai centroid dari cluster yang baru terbentuk. Proses ini Senja lakukan dengan menghitung nilai mean dari setiap data points di dalam cluster tersebut. 
+Mengulang langkah ketiga dan keempat untuk mengoptimisasi posisi dari centroid sampai kriteria berhenti terpenuhi.
+Senja juga menunjukkan catatan berisi poin-poin di bawah ini yang merupakan kriteria berhenti dalam algoritma K-Means clustering:
+
+Nilai centroid sudah tidak berubah.
+Data point tetap berada pada cluster yang sama.
+Jumlah iterasi maksimum telah tercapai.
+
+
+--Menginisialisasi Centroid
+jika inisialisasi awal posisi centroid tidak sesuai, algoritma K-Means Clustering dapat menghasilkan cluster yang buruk. Untuk nilai k yang masih tergolong rendah, kita dapat menjalankan algoritma k-means beberapa kali dengan nilai centroid yang berbeda, kemudian memilih hasil yang terbaik. Namun seiring nilai k meningkat, kita perlu berhati-hati dalam memilih nilai awal centroid.
+Jika menggunakan modul KMeans dari library scikit-learn, disana tersedia beberapa cara yang dapat dipilih untuk menginisialisasi centroid. Kita dapat menambahkan metode inisialisasi dengan menggunakan parameter init dan menuliskan metode yang dipilih.
+Apabila kita menggunakan modul KMeans dari library scikit-learn, tersedia beberapa cara yang dapat dipilih untuk menginisialisasi centroid. Kita dapat menambahkan metode inisialisasi dengan menggunakan parameter init dan menuliskan metode yang dipilih. Metode yang umumnya digunakan antara lain:
+
+Random
+Pada pilihan random, posisi awal centroid akan ditentukan secara acak.
+
+K-means++
+Pada pilihan K-means++, centroid umumnya diinisialisasi dengan posisi yang jauh dari satu sama lain (umumnya). Hal ini menyebabkan adanya kemungkinan pilihan ini lebih baik dibandingkan random.
+
+Apabila kita tidak menuliskan parameter ini, maka inisialisasi yang akan digunakan adalah K-means++.
+
+
+
+--Selanjutnya, Senja menunjukkan langkah-langkah inisialisasi centroid menggunakan K-means++,  antara lain:
+
+Memilih satu centroid secara acak.
+Menghitung jarak setiap data point dengan centroid yang baru saja dibuat.
+Memilih data point dengan jarak terjauh dan menjadikannya centroid.
+Mengulangi langkah kedua dan ketiga sampai sejumlah k centroid telah terbentuk.
+
+--Dua Metode Umum Untuk Menentukan Jumlah Cluster
+dua metode umum yang digunakan untuk menentukan nilai k, yaitu:
+
+Elbow Method.
+Silhouette Method.
+
+--Elbow Method
+Senja kembali memulai penjelasannya, “Metode yang pertama ada elbow method. Metode ini paling dikenal untuk menentukan jumlah cluster yang optimal. Metode ini menghitung nilai Within-Cluster-Sum of Squared Error (WSS) untuk setiap nilai k.” 
+
+Senja telah membuat poin-poin yang menjelaskan Elbow method sebagai berikut:
+
+Menghitung nilai Squared Error. Squared Error merupakan jarak dari suatu point dengan centroid-nya (cluster center). 
+Menghitung inertia atau WSS merupakan total dari nilai squared error seluruh data point.
+Membuat plot WSS-vs-k dalam bentuk grafik.
+Memilih k ketika plot menyerupai siku (elbow).
+
+Model yang baik biasanya memiliki nilai inertia atau WSS yang rendah dan jumlah cluster k yang rendah. Namun, ini seperti tradeoff karena semakin banyak jumlah cluster-nya, maka nilai inertia juga akan semakin rendah
+
+--Silhouette Method
+“Elbow method tadi kan metode pertama, metode keduanya apa?” tanyaku.
+
+ 
+
+“Metode kedua adalah silhouette method. Metode ini mengukur tingkat kemiripan suatu point dengan clusternya (kohesi) dibandingkan dengan cluster lain (separasi).” jawab Senja. 
+
+ 
+
+Nilai silhouette memiliki rentang dari -1 sampai +1. Senja menjelaskan jika semakin mendekati angka 1 artinya suatu data point berada pada cluster yang benar. Sementara apabila suatu data point memiliki nilai yang negatif, maka dapat dikatakan Senja memiliki terlalu banyak atau terlalu sedikit cluster.
+
+ 
+
+Sambil mendengarkan penjelasan Senja, aku membaca langkah-langkah mencari silhouette score:
+
+Menghitung a(i) : rata-rata jarak dari suatu point ke poin-poin lainnya di cluster yang sama.
+Menghitung b(i) : rata-rata jarak dari suatu point ke poin poin dari cluster lain yang paling dekat dengan clusternya.
+Menghitung s(i) : silhouette coefficient dari poin i.
+
+--Pengertian RFM
+Aku berhasil menampilkan data Recency, Frequency, dan Monetary value (RFM) dari pelanggan pusat perbelanjaan ABC. Nilai ini banyak digunakan pada analisis customer relationship management untuk menganalisis konsumen.
+
+Aku mengecek kembali pengertian RFM untuk mencegah adanya kesalahan melalui catatan yang diberikan Senja berikut ini:
+
+Recency merupakan variabel untuk mengukur waktu terakhir konsumen melakukan transaksi,
+Frequency merupakan variabel untuk mengukur seberapa sering konsumen melakukan transaksi,
+Monetary merupakan variabel untuk mengukur jumlah transaksi dari setiap konsumen.
+
+Sekembalinya dari istirahat, Senja memintaku  untuk menampilkan data dalam bentuk boxplot.
