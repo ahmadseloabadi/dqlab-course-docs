@@ -1,0 +1,23 @@
+Apa itu Feature Importance?
+Aku sampai pada halaman yang membahas Decision Tree. Sebuah fitur di mana setiap simpul (node) merupakan kondisi yang dapat membagi nilai dalam satu fitur sehingga nilai yang sama dari variabel dependen berakhir di himpunan yang sama setelah dilakukannya pemisahan. 
+
+Kondisi ini terjadi berdasarkan ketidakmurnian (impurity), di mana pada kasus klasifikasi diperoleh dari entropy. Jadi, ketika menghitung seberapa besar hubungan atau kontribusi setiap fitur untuk mengurangi ketidakmurnian biasanya fitur tersebut akan dihilangkan karena paling tidak berkontribusi dan yang dipakai yang paling berkontribusi pada target (variabel dependen). Untuk itu, bisa menggunakan feature_importances_ di Scikit_learn.
+
+Fungsi Feature Importance
+Selanjutnya adalah Feature Importance. Aku sudah cukup familiar dengan hal ini. Biasanya teknik ini aku gunakan untuk menentukan nilai variabel input atau variabel independen yang berguna untuk memprediksi variabel target. Nilai dari variabel-variabel input tersebut dapat diurutkan dari yang tertinggi, mencerminkan seberapa penting variabel tersebut pada model yang akan aku kembangkan. Hal ini tentunya sangat berguna, misalnya dalam permodelan prediktif, dimana nilai ini dapat dijadikan dasar pengurangan dimensi data yang digunakan dengan tujuan meningkatkan efisiensi dan efektivitas dari model tersebut.
+
+Feature Importance ini tentunya juga berguna untuk menggambarkan input mana yang paling relevan sehingga memudahkan pemahaman dan memecahkan permasalahan yang dihadapi.
+
+Hyperparameters Tuning
+Apa itu Hyperparameters Tuning?
+Pembahasan ini menarik perhatianku. Ternyata, dalam Random forest ada yang namanya Hyperparameters tuning, jadi kalau diibaratkan aku memiliki sebuah radio yang memiliki dua tombol untuk memutarnya. Tombol pertama untuk mengecilkan dan mengeraskan volume, lalu yang satu lagi untuk mencari frekuensi radio. Dari tombol tersebut kadang kita perlu memutarnya untuk mencari frekuensi yang baik. Kurang lebih konsepnya sama seperti hyperparameters tuning.
+
+Dapat disimpulkan kalau Hyperparameters tuning ini seperti melakukan setting atau algoritma yang dapat disesuaikan untuk mengoptimalisasikan kinerja model. Jadi, harus diatur terlebih dahulu sebelum melakukan training.
+
+ 
+
+Kegunaan Hyperparameters Tuning pada Random Forest
+Dalam kasus Random Forest, hyperparameter dapat mencakup jumlah decision tree pada forest dan jumlah fitur yang akan dipertimbangkan pada setiap pohon jika aku memisahkan node. Dari parameter Random Forest, variabel ambang batas (threshold) dapat digunakan untuk memisahkan node selama proses training. 
+
+
+Karena biasanya Hyperparameter sulit untuk ditentukan, aku memerlukan tuning (penyetelan) pada model dimana machine learning akan melakukannya berdasarkan teknik trial dan error. 
