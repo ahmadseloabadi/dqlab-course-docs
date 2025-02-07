@@ -1,0 +1,39 @@
+Apa itu Decision Tree?
+“Decision Tree berbentuk flowchart dengan struktur seperti grafik pohon di mana setiap simpul atau biasa disebut “node” merepresentasikan pengujian pada atribut yang memiliki simpul akar (root node) yang berisi pertanyaan tentang data. Setiap cabang mewakili hasil pengujian dan setiap simpul daun (leaf node) mewakili label kelas. Nah, keputusan diambil setelah menghitung semua atribut,” jawab Sunyi yang sekaligus menjelaskan.
+
+Kegunaan Decision Tree
+“Tepatnya tujuan Decision Tree adalah membuat model yang memprediksi nilai variabel target atau kelas dengan mempelajari aturan keputusan sederhana yang disimpulkan dari fitur data. Aturan keputusan tersebut didapatkan dari kemampuan Decision Tree untuk mem-break down proses pengambilan keputusan yang kompleks menjadi lebih sederhana.,”
+
+“Bukan itu saja, Decision Tree juga dapat dimanfaatkan untuk melakukan eksplorasi data. Misalnya untuk menemukan hubungan antara sejumlah calon variabel input dengan sebuah variabel target. Dengan begitu, hasil dari Decision Tree akan mendukung keputusan untuk mengetahui variabel input mana yang berpengaruh pada variabel target,” sambung Sunyi menjelaskan secara detail padaku.
+
+Konsep Decision Tree
+Pengertian Entropy adalah jumlah ketidakteraturan informasi. Sederhananya, bisa dikatakan sebagai jumlah keacakan dalam data atau ketidakpastian. Sedangkan Impurity dihitung berdasarkan Entropy data dalam node
+untuk konsep ini Entropy pada sebuah dataset bergantung pada seberapa banyak keacakan (randomness) dalam node. Semakin rendah Entropy, maka semakin tidak seragam distribusinya dan semakin murni (pure) node-nya
+Jika sampel benar - benar homogen atau seragam, maka Entropy benar - benar nol dan jika sampel dibagi rata maka akan memiliki Entropy 1
+
+Kelebihan dan Kelemahan Decision Tree
+Sunyi memberikanku sebuah catatan tentang beberapa kelebihan Decision Tree untuk aku pahami, sebagai berikut:
+
+Mudah dipahami dan diinterpretasikan karena menggunakan struktur pohon yang mudah dimengerti oleh manusia.
+Model pohon keputusan yang mudah dipahami. Adanya setiap simpul akar (root node) berupa pertanyaan dan simpul daun (leaf node) sebagai jawaban, membuat struktur/aturan pengambilan keputusan yang kompleks menjadi lebih sederhana dan jelas alasannya.
+Membantu Sunyi menentukan nilai terburuk, terbaik, dan yang diharapkan untuk skenario yang berbeda.
+Dapat dikombinasikan dengan teknik pengambilan keputusan lainnya oleh Sunyi.
+ 
+
+Meskipun memiliki kelebihan, Decision Tree juga memiliki sejumlah kelemahan atau keterbatasan seperti:
+
+Kurang stabil, artinya perubahan kecil yang dilakukan Sunyi dalam data dapat menyebabkan perubahan besar dalam struktur pohon keputusan yang optimal.
+Perhitungan bisa menjadi sangat kompleks, terutama jika banyak nilai tidak pasti dan/atau jika banyak hasil terkait.
+Bisa terjadi overlap, terutama ketika kelas dan kriteria/atribut yang digunakan sangat banyak. Selain itu, juga menambah waktu pengambilan keputusan sesuai jumlah memori yang dibutuhkan.
+Menurut Sunyi, hasilnya sering relatif tidak akurat. Banyak prediktor lain berkinerja lebih baik dengan data serupa. Namun, hal ini dapat diatasi dengan mengganti pohon keputusan tunggal (single decision tree) dengan Random Forest dari Decision Tree.
+
+Apa itu Random Forest?
+Random Forest adalah metode pembelajaran (learning) untuk klasifikasi, regresi, atau tugas lainnya yang beroperasi dengan membangun banyak pohon keputusan (decision tree) pada waktu training. Penggunaan pohon yang semakin banyak akan mempengaruhi hasil akurasi yang didapatkan menjadi lebih baik,
+Untuk klasifikasi, output dari Random Forest adalah kelas yang dipilih oleh sebagian besar pohon. Sedangkan untuk regresi, output Random Forest adalah rata - rata atau prediksi rata - rata dari masing - masing pohon.
+
+Mengapa perlu Random Forest?
+Karena Random Forest menggunakan Decision Tree untuk melakukan proses seleksi. Pohon yang dibangun akan dibagi secara rekursif dari data pada kelas yang sama. Pemecahan (split) digunakan untuk membagi data berdasarkan jenis atribut yang digunakan,
+Random Forest ini bisa digunakan untuk menangani sampel banyak,Bukan hanya itu, Random Forest juga mampu mengklasifikasi data yang memiliki atribut tidak lengkap
+Proses klasifikasi pada Random Forest diawali dengan memecah data sampel yang ada ke dalam Decision Tree secara acak. Setelah pohon terbentuk, maka akan dilakukan voting pada setiap kelas dari data sampel. Kemudian, setiap vote dari setiap kelas tersebut dikombinasikan dan diambil vote yang paling banyak. Dengan menggunakan Random Forest pada klasifikasi data, maka akan menghasilkan vote yang paling baik
+perlu diingat walaupun dapat digunakan untuk klasifikasi maupun regresi, Random Forest tidak terlalu bagus untuk regresi. Selain itu, dalam permasalahan dengan beberapa variabel kategori (multiclass), Random Forest kurang dapat meningkatkan akurasi dari pembelajaran dasar (base learning)
+
