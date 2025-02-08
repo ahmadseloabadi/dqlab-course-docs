@@ -1,0 +1,75 @@
+--Library yang Digunakan
+Pada analisis kali ini, akan digunakan beberapa package yang membantu kita dalam melakukan analisis data,
+
+Pandas (Python for Data Analysis) adalah library Python yang fokus untuk proses analisis data seperti manipulasi data, persiapan data, dan pembersihan data.
+read_csv() digunakan untuk membaca file csv
+replace() digunakan untuk mengganti nilai
+value_counts() digunakan untuk mengitung unik dari kolom
+drop() digunakan untuk menghapus
+describe() digunakan untuk melihat deskripsi datanya
+value_counts() digunakan untuk mengitung unik dari kolom
+Matplotlib adalah library Python yang fokus pada visualisasi data seperti membuat plot grafik. Matplotlib dapat digunakan dalam skrip Python, Python dan IPython shell, server aplikasi web, dan beberapa toolkit graphical user interface (GUI) lainnya.
+figure() digunakan untuk membuat figure gambar baru
+subplots()digunakan untuk membuat gambar dan satu set subplot
+title()digunakan untuk memberi judul pada gambar
+ylabel()digunakan untuk memberi label sumbu Y pada gambar
+xlabel()digunakan untuk memberi label sumbu Y pada gambar
+pie()digunakan untuk membuat pie chart
+Seaborn membangun plot di atas Matplotlib dan memperkenalkan tipe plot tambahan. Ini juga membuat plot Matplotlib tradisional Anda terlihat lebih cantik.
+
+countplot() digunakan untuk membuat plot dengan jumlah pengamatan di setiap bin kategorik variable
+heatmap() Plot rectangular data as a color-encoded matrix
+Scikit-learn adalah library dalam Python yang menyediakan banyak algoritma Machine Learning baik untuk Supervised, Unsupervised Learning, maupun digunakan untuk mempreparasi data.
+
+LabelEncoder() digunakan untuk merubah nilai dari suatu variable menjadi 0 atau 1
+train_test_split() digunakan untuk membagi data menjadi 2 row bagian (Training & Testing)
+LogisticRegression() digunakan untuk memanggil algoritma Logistic Regression
+RandomForestClassifier() digunakan untuk memanggil algoritma Random Forest Classifier
+confusion_matrix() digunakan untuk membuat confusion matrix
+classification_report() digunakan untuk membuat classification report, yang dianataranya berisi akurasi model
+Xgboost adalah library dalam Python untuk algoritma extreme gradient boosting (xgboost)
+
+XGBClassifier() digunakan untuk memanggil algoritma XG Boost Classifier
+Pickle mengimplementasikan protokol biner untuk serializing dan de-serializing dari struktur objek Python.
+
+dump() digunakan untuk menyimpan
+
+--Data yang Digunakan
+Untuk Dataset yang digunakan sudah disediakan dalam format csv, silahkan baca melalui fungsi pandas di python df_load = pd.read_csv('https://storage.googleapis.com/dqlab-dataset/dqlab_telco_final.csv')
+
+ 
+Untuk detil datanya adalah sebagai berikut:
+
+UpdatedAt Periode of Data taken
+customerID Customer ID
+gender Whether the customer is a male or a female (Male, Female)
+SeniorCitizen Whether the customer is a senior citizen or not (Yes, No)
+Partner Whether the customer has a partner or not (Yes, No)
+tenure Number of months the customer has stayed with the company
+PhoneService Whether the customer has a phone service or not (Yes, No)
+InternetService Customer’s internet service provider (Yes, No)
+StreamingTV Whether the customer has streaming TV or not (Yes, No)
+PaperlessBilling Whether the customer has paperless billing or not (Yes, No)
+MonthlyCharges The amount charged to the customer monthly
+TotalCharges The total amount charged to the customer
+Churn Whether the customer churned or not (Yes, No)
+
+
+--Menentukan Algoritma Model Terbaik
+
+Model yang baik adalah model yang mampu memberikan performa bagus di fase training dan testing model.
+
+Over-Fitting adalah suatu kondisi dimana model mampu memprediksi dengan sangat baik di fase training, akan tetapi tidak mampu memprediksi sama baiknya di fase testing.
+Under-Fitting adalah suatu kondisi dimana model kurang mampu memprediksi dengan baik di fase training, akan tetapi mampu memprediksi dengan baik di fase testing.
+Appropriate-Fitting adalah suatu kondisi dimana model mampu memprediksi dengan baik di fase training maupun di fase testing.
+Untuk detil jelasnya, bisa dilihat di ilustrasi di bawah ini:
+
+
+
+Selanjutnya kita akan menentukan model algoritma terbaik dari model yang sudah di lakukan di atas (Appropriate-Fitting), kemudian kita simpan sebagai file best_model_churn.pkl dengan tujuan untuk deployment model nantinya kita tidak perlu mengulang lagi pemodelan, cukup memanggil file tersebut saja. Simpan di file direktori sesuai dataset berada, kemudian check apakah file tersebut benar tersimpan atau tidak. Gunakan dump() dari pickle untuk menyimpan file. Anda bisa gunakan code dibawah ini untuk menyimpan file model untuk di coba di local laptop anda pribadi.
+
+#Save Model
+pickle.dump(log_model, open('best_model_churn.pkl', 'wb'))
+ 
+
+Akan tetapi untuk tahap pembelajaran pada modul ini, teman-teman diharapkan cukup menentukan mana model yang terbaik, kemudian sekaligus mem-print model tersebut
