@@ -1,0 +1,12 @@
+--Apa itu Clustering dan Algoritma K-Prototypes
+Clustering adalah proses pembagian objek-objek ke dalam beberapa kelompok (cluster) berdasarkan tingkat kemiripan antara satu objek dengan yang lain.
+
+Terdapat beberapa algoritma untuk melakukan clustering ini. Salah satu yang populer adalah k-means.
+
+K-means itu sendiri biasa nya hanya digunakan untuk data-data yang bersifat numerik. Sedangkan untuk yang bersifat kategorikal saja, kita bisa menggunakan k-modes.
+
+Lalu bagaimana apabila di data kita terdapat gabungan kategorikal dan numerikal variabel? Jawabannya kita bisa menggunakan algoritma k-prototype yang merupakan gabungan dari k-means dan k-modes. Hal ini bisa dilakukan dengan menggunakan library k-modes yang didalamnya terdapat modul kprototype.
+
+Untuk menggunakan algoritma kprototype kamu perlu memasukkan jumlah cluster yang dikehendaki dan juga memberikan index kolom untuk kolom-kolom yang bersifat kategorikal.
+
+Untuk lebih lengkapnya kamu bisa melihat dokumentasi dari kprototype melalui link berikut: https://github.com/nicodv/kmodes
