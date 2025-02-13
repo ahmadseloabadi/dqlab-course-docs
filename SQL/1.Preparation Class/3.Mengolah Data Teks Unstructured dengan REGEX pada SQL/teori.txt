@@ -1,0 +1,135 @@
+**Notasi Regular Expression**
+
+Regex menyediakan beberapa karakter spesial yang dapat kamu gunakan untuk mencocokkan karakter dengan pola. Perlu diingat bahwa regex bersifat **case sensitive** (huruf kecil dan huruf besar dianggap berbeda).
+
+Berikut adalah beberapa notasi regex yang umum digunakan:
+
+| Notasi  | Nama Notasi          | Kegunaan | Teks yang sesuai |
+|---------|----------------------|----------|------------------|
+| `.`     | Wildcard             | Mencocokkan satu karakter apapun kecuali newline (`\n`). | Regex `(pa.)` akan sesuai dengan `pai`, `pat`, `pal`, dsb. |
+| `?`     | Optionality          | Karakter sebelum tanda `?` bersifat opsional (boleh ada atau tidak). | Regex `(bijak?)` akan sesuai dengan `bija` dan `bijak`. |
+| `*`     | Repeatability        | Menunjukkan bahwa karakter sebelum `*` dapat muncul nol atau lebih kali. | Regex `(go*)` akan sesuai dengan `g`, `go`, `goo`, `gooo`, dsb. |
+| `+`     | Repeatability        | Menunjukkan bahwa karakter sebelum `+` harus muncul minimal satu kali. | Regex `(go+)` akan sesuai dengan `go`, `goo`, `gooo`, dsb. tetapi tidak cocok dengan `g`. |
+| `[]`    | Choice / set of characters | Menemukan pola kata yang cocok dengan pilihan karakter di dalamnya. | Regex `([b-d]uku)` akan sesuai dengan `buku`, `cuku`, `duku`, tetapi tidak `auku`. |
+| `-`     | Range                | Menunjukkan rentang tertentu dalam set karakter. | Regex `([a-z], [A-Z], [0-9], [a-zA-Z0-9])` akan cocok dengan karakter dalam rentang tersebut. |
+| `^`     | Complement           | Menunjukkan negasi atau komplement. Biasanya digunakan dalam set karakter. | Regex `([^a-l])` akan sesuai dengan karakter di luar rentang `a-l`. |
+| `^`     | Prefix               | Mencocokkan teks yang berada di awal kalimat. | Regex `(^ayam)` akan sesuai dengan `ayam enak dimakan` tetapi tidak dengan `sate ayam enak`. |
+| `$`     | Suffix               | Mencocokkan teks yang berada di akhir kalimat. | Regex `(ayam$)` akan sesuai dengan `sate ayam` tetapi tidak dengan `ayam goreng enak`. |
+| `{n,m}` | Quantifier           | Menentukan berapa banyak karakter yang boleh muncul dalam teks berdasarkan jumlah minimum (`n`) dan maksimum (`m`). | Regex `(ha{2,4})` akan sesuai dengan `haa`, `haaa`, dan `haaaa`, tetapi tidak dengan `ha` atau `haaaaa`. |
+
+Dengan memahami tabel di atas, kamu bisa lebih mudah menggunakan regex dalam berbagai kasus seperti validasi input, pencarian teks, atau manipulasi string.
+
+----------------------------------------------------------------
+# Sets dan Group dalam Regex
+
+> "Pada regex kita bisa mengkombinasikan berbagai notasinya, Aksara. Namun tidak hanya sebatas itu, kita harus tahu juga tentang *sets* dan *group* pada regex. Perhatikan lagi materi berikut ya," ujar Antara menambahkan.
+
+## Sets dalam Regex
+*Sets* adalah himpunan karakter di dalam sepasang tanda kurung siku `[ ]` dengan arti khusus. Berikut adalah beberapa contoh penggunaan sets dalam regex:
+
+| **Notasi**  | **Deskripsi**  |
+|-------------|----------------|
+| `[abc]`     | Teks akan sesuai (*match*) jika terdapat salah satu karakter `a`, `b`, atau `c` di dalamnya |
+| `[a-z]`     | Teks akan sesuai (*match*) jika memuat huruf kecil dari `a` sampai `z` |
+| `[A-Z]`     | Teks akan sesuai (*match*) jika memuat huruf besar dari `A` sampai `Z` |
+| `[a-zA-Z]`  | Teks akan sesuai (*match*) jika memuat huruf kecil maupun besar |
+| `[^a-z]`    | Teks akan sesuai (*match*) dengan karakter selain huruf kecil (notasi `^` di awal menandakan negasi) |
+| `[0-9]`     | Teks akan sesuai (*match*) dengan karakter angka dari `0` sampai `9` |
+
+---
+
+## Group dalam Regex
+*Group* atau juga disebut *capture and group* adalah pengelompokan notasi regex yang dikurung dalam tanda kurung biasa `( )`. Ini digunakan untuk menangkap bagian tertentu dari teks yang dicocokkan.
+
+Kita bisa menggunakan simbol `( )` untuk mengelompokkan beberapa pola dalam regex, sedangkan untuk *me-return* nilai dari group, kita bisa menggunakan simbol `$`.
+
+### Contoh:
+Jika kita ingin mengubah kata **"1kroma"** menjadi **"kroma-1"**, kita bisa menggunakan regex berikut:
+
+```regex
+REGEXP_REPLACE("1kroma", "([0-9])([a-z]+)", "$2-$1")
+```
+
+### Penjelasan Regex
+- `([0-9])` → Group 1: Menangkap angka di awal (misalnya, `1`).
+- `([a-z]+)` → Group 2: Menangkap semua huruf setelah angka (misalnya, `kroma`).
+- `$2-$1` → Menukar posisi hasil tangkapan, sehingga angka berpindah ke belakang dengan tambahan strip (`-`).
+
+**Hasil akhir:** `"kroma-1"`
+----------------------------------------------------------------
+Seru ya belajar Regex!
+
+Dari pelajaran yang aku dapatkan, aku mengambil kesimpulan dan mencatat beberapa informasi penting dalam buku catatanku, yaitu:
+REGEXP adalah bagian perintah SQL yang digunakan untuk melakukan pencocokan pola dari ekspresi string dengan notasi regex terhadap suatu pola. Pola diberikan sebagai argument dengan sintaks umumnya adalah:
+
+SELECT * FROM nama_tabel WHERE nama_kolom REGEXP 'argumen'
+
+ 
+
+Dengan argumen merupakan kombinasi notasi regex yang diinginkan
+
+Aku juga menghighlight bahwa REGEXP bersifat case sensitive artinya huruf besar dan huruf kecil diartikan karakter yang berbeda atau dengan kata lain peka terhadap besar-kecilnya huruf
+------------------------------------------------------------------------------------------------
+Sintaks REGEXP_LIKE
+
+REGEXP_LIKE merupakan query pada SQL yang fungsinya mirip dengan query LIKE (query yang digunakan dalam klausa WHERE (pengkondisian) untuk mencari pola tertentu dalam kolom). Namun pada REGEXP_LIKE mendukung notasi regex dan juga terdapat pilihan (option) untuk mengubah perilaku pencocokan default dari fungsi tersebut. Maksudnya jika regex bersifat case sensitive secara default, dengan REGEXP_LIKE kita bisa menginisialisasi sebuah parameter untuk mengubah menjadi ignore case sensitive (abaikan besar-kecilnya huruf) atau keep case sensitive (tidak mengabaikan besar-kecilnya huruf).
+
+Bentuk umum sintaks pada REGEXP_LIKE adalah sebagai berikut:
+
+SELECT * FROM nama_tabel WHERE REGEXP_LIKE(nama_kolom, 'argumen', match_parameter);
+
+Keterangan:
+- 'argumen' : kombinasi notasi regex yang diinginkan.
+- match_parameter : literal teks yang memungkinkan untuk pengubahan perilaku pencocokan default dari fungsi tersebut.
+
+Jenis parameter yang bisa digunakan pada match_parameter adalah sebagai berikut:
+
+| Parameter | Kegunaan |
+|-----------|----------|
+| i | Mengabaikan case sensitive pada teks |
+| c | Memperhatikan case sensitive pada teks |
+| n | Mengabaikan pengenalan notasi tertentu pada regex. Misal: wildcard (.) akan bisa mendeteksi newline |
+| m | Memperlakukan teks sebagai multiple line |
+| x | Mengabaikan whitespace (karakter spasi) |
+
+Ingat! match_parameter bersifat opsional artinya bisa digunakan bisa juga tidak. Jika tidak digunakan maka pengaturan dasar (default) akan diterapkan.
+----------------------------------------------------------------
+Kesimpulan
+Aku kembali mencatat dalam buku catatanku hal yang telah aku pelajari dari beberapa soal yang diberikan Antara.
+
+REGEXP_LIKE adalah bagian perintah SQL yang digunakan untuk melakukan pencocokan pola dari ekspresi string dengan notasi regex terhadap suatu pola. Pola diberikan sebagai argument dengan sintaks umumnya adalah
+
+SELECT * FROM nama_tabel WHERE REGEXP_LIKE (nama_kolom, 'argumen', match_parameter)
+
+Dengan argumen merupakan kombinasi notasi regex yang diinginkan
+
+
+REGEXP_LIKE berbeda dengan REGEXP. Perbedaannya pada REGEXP_LIKE mendukung fitur tambahan yakni match_parameter. Dimana match_parameter memungkinkan untuk pengubahan perilaku pencocokan default dari regex seperti mengabaikan atau tidak mengabaikan case sensitive, mengabaikan whitespace, dsb.
+----------------------------------------------------------------
+Sintaks REGEXP_REPLACE
+REGEXP_REPLACE merupakan query pada SQL yang fungsinya mirip dengan query REPLACE (query yang digunakan untuk mengganti string/karakter tertentu dalam kolom dengan string/karakter yang lain), namun pada REGEXP_REPLACE mendukung notasi regex.
+
+ 
+
+Bentuk umum sintaks pada REGEXP_REPLACE adalah sebagai berikut.
+
+
+SELECT REGEXP_REPLACE (nama_kolom, 'string yang ingin diganti', 'string pengganti') FROM nama_tabel
+
+
+String yang ingin diganti pada kolom yang dipilih, mendukung notasi regex jika menggunakan query REGEXP_REPLACE.
+------------------------------------------------------------------------------------------------
+
+--Hasil Belajarku
+Wah senangnya! Aku telah berhasil menyelesaikan rangkaian pelajaran Mengolah Data Teks Unstructured dengan REGEX pada SQL. Dari materi yang telah aku pelajari dan praktekkan, aku telah:
+
+Mampu memahami dan mengenal secara singkat apa itu REGEX dan kegunaannya.
+Mampu mengenal karakteristik table dqlabregex yang merupakan tabel pencatatan jumlah member di kota-kota tertentu, dimana table ini kebanyakan memiliki kolom bertipe varchar memiliki penulisan yang berbeda pada kolom tanggal_catat dan juga ada kesalahan penulisan pada kolom jumlah_member (angka 0 ditulis sebagai huruf O), dan juga pada kolom staf_pencatat (Senja dan Sendja).
+Mengenal penggunaan operator REGEXP pada MySQL.
+Mampu menggunakan operator REGEXP dan character class untuk filter data dengan staf_pencatat bernama Senja dan Sendja menggunakan pola regex sen.?ja.
+Mampu menggunakan operator REGEXP dan negasi character set untuk memfilter data salah penulisan angka pada kolom jumlah_member dengan regex [^0-9] (karakter bukan angka).
+Mampu menggunakan fungsi REGEXP_LIKE dan character class untuk filter data dengan staf_pencatat bernama Senja dan Sendja menggunakan pola regex sen.?ja.
+Mampu menggunakan fungsi REGEXP_LIKE dan negasi character set untuk memfilter data salah penulisan angka pada kolom jumlah_member dengan regex [^0-9] (karakter bukan angka).
+Mampu menggunakan fungsi REGEXP_REPLACE dan negasi character set untuk menghapus karakter bukan angka pada jumlah_member dengan regex [^0-9].
+Mampu menggunakan fungsi REGEXP_REPLACE untuk merapikan format tanggal yang berbeda dengan capturing group $1, $2, dan $3
+Ini adalah pelajaran berharga, aku sangat antusias untuk mendapatkan sertifikatku dan membagikannya ke rekan-rekanku di Linkedin!
