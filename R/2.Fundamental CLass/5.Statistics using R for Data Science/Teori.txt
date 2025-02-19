@@ -1,0 +1,61 @@
+Pengenalan Uji Hipotesis
+Uji hipotesis adalah metode pengambilan keputusan yang didasarkan dari analisis data. Dalam statistik dapat menguji sebuah hipotesis benar atau salah. Ada 2 jenis hipotesis yaitu hipotesis null (hipotesis nihil) dan hipotesis alternatif. Hipotesis nihil (Ho) yaitu hipotesis yang berlawanan dengan teori yang akan dibuktikan. Hipotesis alternatif (Ha) adalah hipotesis yang berhubungan dengan teori yang akan dibuktikan.
+
+Dalam melakukan pengujian statistik kita perlu menggunakan metode statistik uji, yang sering digunakan yaitu z-test, t-test, chi-square test, dan f-test. Pada bab kali ini kita tidak akan membahas detail dari setiap statistik uji diatas, tetapi kita akan fokus cara menggunakannya.
+
+Selanjutnya kita harus paham mengenai p-value dan alpha yang akan digunakan dalam statistik uji.
+
+P-value adalah peluang terkecil dalam menolak Ho. Sedangkan alpha adalah tingkat kesalahan. Nilai alpha biasanya adalah 1%, 5%, dan 10%. Dalam prakteknya alpha 5% sering digunakan, karena lebih moderat.
+
+Hipotesis Ho ditolak jika nilai p-value kurang dari alpha (5%), sedangkan jika p-value lebih dari nilai alpha maka yang Ho diterima.
+-----------------------------------------------
+Perbedaan Statistik Deskriptif dan Statistik Inferensia
+Dalam statistik ada 2 jenis analisis data, yaitu statistik deskriptif dan statistik inferensia. Uji hipotesis, yang dijelaskan pada subbab sebelumnya termasuk kedalam statistik inferensia.
+
+Untuk membedakan antara 2 jenis analisis diatas, maka dapat menyimak penjelasan berikut:
+
+Statistik Deskriptif adalah statistik yang digunakan untuk analisa data dengan cara menggambarkan data sampel dengan tanpa membuat kesimpulan untuk data populasi. Beberapa hal yang dapat dilakukan adalah penyajian data melalui tabel, grafik, perhitungan modus, median, mean, perhitungan penyebaran data melalui perhitungan rata-rata dan standar deviasi. Statistik Deskriptif digunakan untuk eksplorasi data.
+Statistik Inferensia adalah yaitu statistik yang digunakan untuk menganalisis data sampel dan hasilnya diberlakukan untuk populasi. Beberapa hal yang dapat dilakukan adalah menguji hipotesis dengan statistik uji, seperti chi-square test, student-t test, f-test, z-score test.
+------------------------------------------------
+Tujuan Analisis Inferensia
+Tujuan Analisis berikutnya dari dataset kita adalah untuk mendapatkan informasi berikut:
+
+Bagaimana hubungan pendapatan dengan total belanja.
+Bagaimana pengaruh suatu produk dengan kepuasan pelanggan.
+Bagaimana hubungan jenis kelamin dengan total belanja.
+---------------------------------------------------
+Hubungan Antara Variabel Numerik
+Berdasarkan hasil kasus sebelumnya, kita akan melihat hubungan antara data numerik dan numerik.
+
+Ada dua cara untuk melihat hubungan antar variabel, yaitu dengan grafik scatter plot dan analisis korelasi. Grafik scatter plot untuk melihat arah hubungan, poisitif dan negatif. Sedangkan analisis korelasi adalah untuk menguji/konfirmasi apakah kedua variabel tersebut memang berhubungan dan sebearapa kuat hubungannya.
+
+Rentang nilai koefisien korelasi antara -1 sampai 1. Korelasi kuat ketika mendakati -1 atau 1, sedangkan dikatakan lemah jika mendekati 0. Untuk mengetahui ada hubungan atau tidaknya menggunakan analisis korelasi, dengan hipotesis sebagai berikut :
+
+Hipotesis Nihil (null): tidak ada hubungan antara kedua variabel.
+Hipotesis Alternatif: ada hubungan antara kedua variabel.
+Berikut gambaran yang lebih jelasnya.Sumber gambar: https://dsmlmdblog.blogspot.com/2016/03/pengertian-dan-perhitungan-korelasi.html
+
+-------------------------------------------------
+Hubungan Antara Variabel Kategorik
+Hubungannya diantara keduanya dapat dilihat dengan menggunakan tabulasi silang dan dapat juga dilihat kecenderungannya. Pada hubungan antara variabel kategorik dan kategorik tersebut tidak bisa diketahui seberapa kuat hubungan diantara keduanya dan bagimana pengaruhnya (positif atau negatif). Untuk mengetahui ada hubungan atau tidaknya menggunakan uji statistik chi-square test, dengan hipotesis sebagai berikut:
+
+Hipotesis Nihil: tidak ada hubungan antara kedua variabel
+Hipotesis Alternatif : ada hubungan antara kedua variabel
+---------------------------------------------------
+Hubungan Antara Variabel Kategorik dan Variabel Numerik
+Hubungannya diantara keduanya dapat dilihat dengan membandingkan rata-rata pada setiap kategori. Jika nilai rata-ratanya berbeda maka kedua variabel memiliki hubungan. Pada hubungan antara variabel kategorik dan numerik tidak bisa diketahui seberapa kuat hubungan diantara keduanya dan bagimana pengaruhnya (positif atau negatif).
+
+Untuk mengetahui ada hubungan atau tidaknya menggunakan uji statistik t-test, dengan hipotesis sebagai berikut
+
+Hipotesis Nihil: tidak ada hubungan antara kedua variabel
+Hipotesis Alternatif: ada hubungan antara kedua variabel
+---------------------------------------------------
+Kesimpulan
+Selamat! Dengan menyelesaikan bab kedua ini maka Anda sudah menyelesaikan course "Introduction to Statictics with R" yang singkat namun padat ini!
+
+Dari pembahasan materi diatas maka kesimpulannya sebagai berikut:
+
+Sebelum memulai menganalisis data harus dilihat summary per tiap variabel.
+Analisis Deskriptif digunakan untuk membangun sebuah hipotesis.
+Analisis Inferensia digunakan untuk menguji hipotesis.
+ 
