@@ -1,0 +1,58 @@
+Function Lainnya untuk Pengolahan Data String
+“Selain strsplit() dan paste(), ada beberapa function lain yang mungkin bisa membantu dalam pengolahan data teks, lho! Seperti function-function berikut ini”, Andra kembali melanjutkan penjelasannya. Namun kali ini Andra menyuruhku memperhatikan 1 halaman informasi tentang penjelasan function agar aku bisa membaca dan memahaminya. 
+
+ 
+
+Nama function           Penjelasan                                                  Penggunaan
+
+nchar()                 Digunakan untuk menampilkan panjang dari suatu              nchar(data_string)
+                        string (jumlah karakter yang menyusun string tersebut)
+
+
+
+substr()                Mengambil beberapa karakter dari suatu data string          substr(data_string,index_mulai, index_akhir)
+
+
+
+subs()                  Digunakan untuk merubah kemunculan pertama sebuah           subs(substring_lama, substring_baru, variable_string)
+                        substring pada suatu string yang memenuhi suatu pola 
+                        atau pattern dengan substring lain
+
+
+
+gsub()                  Digunakan untuk merubah keseluruhan substring pada          gsub(substring_lama, substring_baru, variable_string)
+                        suatu string yang memenuhi suatu pola atau pattern 
+                        dengan substring lain
+
+--------------------------------------
+
+Berkenalan dengan Regex dan Grep
+"Sekarang kita akan lanjut berkenalan dengan regular expression. Regular expression (regex) merupakan sebuah cara yang digunakan untuk mendeskripsikan sebuah pattern atau pola yang ada pada string yang kemudian berguna untuk mencari teks atau character tertentu. Sebagai praktisi data, kita akan banyak menggunakan regex untuk pekerjaan sehari-hari, seperti misalnya mencari file yang ada pada suatu folder melalui regex pada command line, mencari artikel yang mengandung pola teks tertentu, mengganti string dengan pola tertentu, dan banyak kasus lain.", kata Andra.
+
+"Cara yang paling umum digunakan untuk menggunakan regex adalah menentukan character atau teks apa yang ingin kita cari terlebih dahulu”, Andra kembali memberikan penjelasan kepadaku tentang materi yang perlu aku pelajari selanjutnya. 
+
+ 
+
+Beberapa regex yang umum digunakan adalah sebagai berikut.
+
+Regex                   Penggunaan                                  Contoh Karakter             Contoh Pengunaan
+
+\w                      Untuk mencari satu karakter alphanumeric    a                           grep('\\w', data_teks)
+
+\d                      Untuk mencari satu karakter angka           1                           grep('\\d', data_teks)
+
+\w+ atau [A-Za-z0-9]    Mencari suatu kata (lebih dari              dqlab                       grep('\\w+', data_teks)
+                        satu karakter) alphanumeric
+
+\d+                     Mencari suatu kata (lebih dari              1234                        grep('\\d+', data_teks)
+                        satu karakter) angka
+
+\s                      Untuk mencari spasi                         ‘  ‘                        grep('\\s', data_teks)
+
+[A-Za-z]                Mencari suatu kata (lebih dari                                          grep('[A-Za-z]', data_teks)
+                        satu karakter) yang merupakan alphabet
+
+[0-9]                   Mencari suatu kata (lebih dari                                          grep('[0-9]', data_teks)
+                        satu karakter) yang merupakan angka
+
+^                       Kecuali                                                                 [^A-Za-z] digunakan untuk mencari subtrsing yang tidak mengandung karakter alphanumeric
