@@ -1,0 +1,13 @@
+dengan tampilan output berikut.
+
+    lhs                     rhs        support confidence lift    
+[1] {Pet Food}           => {Sirup}    0.4     0.8000000  1.333333
+[2] {Sirup}              => {Pet Food} 0.4     0.6666667  1.333333
+[3] {Gula,Pet Food}      => {Sirup}    0.1     1.0000000  1.666667
+[4] {Pet Food,Teh Celup} => {Sirup}    0.2     0.6666667  1.111111
+Item adalah produk tunggal yang terdapat dalam suatu transaksi.
+Contoh: Pet Food, Sirup, Gula, dan Teh Celup.
+Itemset adalah kombinasi satu atau lebih item yang terdapat dalam satu transaksi.
+Contoh: {Pet Food}, {Gula, Pet Food}, {Sirup}, dan lain-lain. 
+Rule adalah pernyataan hubungan antar Itemset. Biasanya dapat diformulasikan menjadi "Jika membeli itemset A, maka akan membeli itemset B".
+Contoh: {Pet Food} => {Sirup}, {Pet Food, Teh Celup} => {Sirup}, dan lain-lain. 
